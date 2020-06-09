@@ -1,6 +1,6 @@
 ## View App
 
-react-app-todolist.now.sh
+https://react-app-todolist.now.sh
 
 ## Available Scripts
 
