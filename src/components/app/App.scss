@@ -1,5 +1,26 @@
-$red: red;
+$main-bg: #00FFFF;
+
+body {
+  background-color: $main-bg;
+}
 
 .App {
-  border: 1px solid $red;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: rgb(15,36,42);
+  background: linear-gradient(90deg, rgba(15,36,42,1) 0%, rgba(122,241,233,1) 0%);
+  width: 400px;
+  margin: 100px auto 0 auto;
+  padding: 40px 0;
+  text-align: center;
+
+  .title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  .ui.primary.button {
+    margin-left: 10px;
+  }
 }
