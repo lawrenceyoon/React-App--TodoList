@@ -5,8 +5,11 @@ import './TodoList.scss';
 
 const TodoList = (props) => {
   const List = props.todos.map(todo => {
-    return <div className="List" key={todo.key}>
-      {todo.key}{todo.todo}
+    return <div className="TodoItem" key={todo.key}>
+      {todo.key} {todo.todo}
+      <span>
+        <i class="trash alternate outline icon" onClick={() => props.deleteTodo(todo.key)}></i>
+      </span>
     </div>
   });
 

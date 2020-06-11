@@ -18,7 +18,11 @@ class App extends React.Component {
   onFormSubmit = (event) => {
     event.preventDefault();
     this.setState({
-      todos: [...this.state.todos, this.state.currentTodo], currentTodo: { todo: "", key: "" }
+      todos: [...this.state.todos, this.state.currentTodo],
+      currentTodo: {
+        todo: "",
+        key: ""
+      }
     });
   };
 
@@ -29,6 +33,11 @@ class App extends React.Component {
         key: Date.now()
       }
     });
+  };
+
+  onDeleteTodo = (key) => {
+    const filteredItems = this.state.todos.filter((todo) => todo.key !== key);
+    this.setState({ todos: filteredItems });
   };
 
   render() {
@@ -44,7 +53,7 @@ class App extends React.Component {
           <button className="ui primary button" type="submit">Add</button>
         </form>
 
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={this.state.todos} deleteTodo={this.onDeleteTodo} />
       </div>
     );
   };
