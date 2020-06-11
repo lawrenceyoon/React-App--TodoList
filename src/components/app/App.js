@@ -17,6 +17,9 @@ class App extends React.Component {
   // event handlers
   onFormSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      todos: [...this.state.todos, this.state.currentTodo], currentTodo: { todo: "", key: "" }
+    });
   };
 
   onInputChange = (event) => {
