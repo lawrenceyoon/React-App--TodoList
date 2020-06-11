@@ -14,6 +14,7 @@ class App extends React.Component {
       key: ""
     }
   };
+
   // event handlers
   onFormSubmit = (event) => {
     event.preventDefault();
@@ -40,6 +41,7 @@ class App extends React.Component {
     this.setState({ todos: filteredItems });
   };
 
+  // JSX
   render() {
     return (
       <div className="App">
