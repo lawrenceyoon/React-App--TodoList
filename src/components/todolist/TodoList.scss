@@ -1,0 +1,26 @@
+.TodoList {
+  margin-top: 20px;
+
+  .TodoItem {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+    text-align: left;
+    margin: 0 auto 10px auto;
+  }
+
+  span {
+    position: absolute;
+    right: 10px;
+  }
+
+  .checkbox {
+    right: 50px;
+  }
+
+  input {
+    border: none;
+  }
+}

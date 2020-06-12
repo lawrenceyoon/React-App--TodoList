@@ -31,3 +31,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 dependencies:
 npm install --save sass
+npm i -S react-flip-move
