@@ -60,11 +60,18 @@ class App extends React.Component {
         </div>
 
         <form onSubmit={this.onFormSubmit}>
-          <InputBar onInputChange={this.onInputChange} value={this.state.currentTodo.todo} />
+          <InputBar
+            onInputChange={this.onInputChange}
+            value={this.state.currentTodo.todo}
+          />
           <button className="ui primary button" type="submit">Add</button>
         </form>
 
-        <TodoList todos={this.state.todos} updateTodo={this.onUpdateTodo} deleteTodo={this.onDeleteTodo} toggleComplete={this.onToggleTodo} />
+        <TodoList
+          todos={this.state.todos}
+          updateTodo={this.onUpdateTodo}
+          deleteTodo={this.onDeleteTodo}
+        />
       </div>
     );
   };
