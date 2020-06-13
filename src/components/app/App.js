@@ -10,8 +10,8 @@ class App extends React.Component {
   state = {
     todos: [],
     currentTodo: {
-      todo: "",
-      key: ""
+      text: "",
+      id: ""
     }
   };
 
@@ -19,8 +19,8 @@ class App extends React.Component {
   onInputChange = (event) => { // Input bar
     this.setState({
       currentTodo: {
-        todo: event.target.value,
-        key: Date.now()
+        text: event.target.value,
+        id: Date.now()
       }
     });
   };
@@ -30,23 +30,22 @@ class App extends React.Component {
     this.setState({
       todos: [...this.state.todos, this.state.currentTodo],
       currentTodo: {
-        todo: "",
-        key: ""
+        text: ""
       }
     });
   };
 
-  onUpdateTodo = (text, key) => { // Editing todo
-    this.state.todos.map(todo => {
-      if (todo.key === key) {
-        todo.todo = text;
+  onUpdateTodo = (text, id) => { // Editing todo
+    this.state.todos.map((todo) => {
+      if (todo.id === id) {
+        todo.text = text;
       };
     });
     this.setState({todos: this.state.todos});
   };
 
-  onDeleteTodo = (key) => { // Deleting todo
-    const filteredItems = this.state.todos.filter((todo) => todo.key !== key);
+  onDeleteTodo = (id) => { // Deleting todo
+    const filteredItems = this.state.todos.filter((todo) => todo.id !== id);
     this.setState({ todos: filteredItems });
   };
 
@@ -62,7 +61,7 @@ class App extends React.Component {
         <form onSubmit={this.onFormSubmit}>
           <InputBar
             onInputChange={this.onInputChange}
-            value={this.state.currentTodo.todo}
+            value={this.state.currentTodo.text}
           />
           <button className="ui primary button" type="submit">Add</button>
         </form>

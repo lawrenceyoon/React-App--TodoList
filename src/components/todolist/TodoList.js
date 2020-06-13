@@ -7,17 +7,17 @@ import './TodoList.scss';
 const TodoList = (props) => {
   const List = props.todos.map((todo) => {
     return (
-      <div className="TodoItem" key={todo.key}>
+      <div className="TodoItem" key={todo.id}>
         <input
           type="text"
-          id={todo.key}
-          onChange={(event) => {props.updateTodo(event.target.value, todo.key)}}
-          value={todo.todo}
+          id={todo.id}
+          onChange={(event) => {props.updateTodo(event.target.value, todo.id)}}
+          value={todo.text}
         />
         <span className="icon">
           <i
             className="trash alternate outline icon"
-            onClick={() => props.deleteTodo(todo.key)}>
+            onClick={() => props.deleteTodo(todo.id)}>
           </i>
         </span>
       </div>
