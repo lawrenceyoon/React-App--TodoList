@@ -8,10 +8,15 @@ import TodoList from '../todolist/TodoList';
 class App extends React.Component {
   // state
   state = {
-    todos: [],
+    todos: [
+      { text: "three", id: 0, isCompleted: false },
+      { text: "example", id: 1, isCompleted: false },
+      { text: "todos", id: 2, isCompleted: false }
+    ],
     currentTodo: {
       text: "",
-      id: ""
+      id: "",
+      isCompleted: false
     }
   };
 
@@ -20,7 +25,8 @@ class App extends React.Component {
     this.setState({
       currentTodo: {
         text: event.target.value,
-        id: Date.now()
+        id: Date.now(),
+        isCompleted: false
       }
     });
   };
@@ -42,6 +48,16 @@ class App extends React.Component {
       };
     });
     this.setState({todos: this.state.todos});
+  };
+
+  onToggleCompleted = (event, id) => { // Check completed on/off todo
+    const { checked } = event.target;
+    const todos = [...this.state.todos];
+    const todoIndex = this.state.todos.findIndex((todo) => todo.id === id);
+    todos[todoIndex] = { ...todos[todoIndex], isCompleted: checked };
+    this.setState({
+      todos
+    });
   };
 
   onDeleteTodo = (id) => { // Deleting todo
@@ -68,9 +84,13 @@ class App extends React.Component {
 
         <TodoList
           todos={this.state.todos}
+          isCompleted={this.onToggleCompleted}
           updateTodo={this.onUpdateTodo}
           deleteTodo={this.onDeleteTodo}
         />
+
+        <div className="info-bar">* Create, read, update, and delete todos! *</div>
+
       </div>
     );
   };

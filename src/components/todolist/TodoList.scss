@@ -3,7 +3,7 @@
 
   .TodoItem {
     font-size: 20px;
-    padding: 10px;
+    padding: 10px 0px 10px 20px;
     border-radius: 5px;
     background-color: #fff;
     position: relative;
@@ -13,10 +13,20 @@
   
   .icon {
     position: absolute;
-    right: 10px;
+    right: 5px;
   }
   
   input {
     border: none;
+  }
+
+  .checkComplete {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+  }
+
+  .crossed-line {
+    text-decoration: line-through;
   }
 }
