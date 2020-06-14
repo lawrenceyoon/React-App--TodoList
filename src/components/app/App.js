@@ -89,7 +89,7 @@ class App extends React.Component {
           deleteTodo={this.onDeleteTodo}
         />
 
-        <div className="info-bar">* Create, read, update, and delete todos! *</div>
+        <div className="info-bar">* Create, read, update, check on/off, and delete todos! *</div>
 
       </div>
     );
